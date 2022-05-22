@@ -45,4 +45,12 @@ function commonWords(string){
     return finObj
 }
 
-console.log(commonWords('joe likes milk bob also likes milk'))
+//console.log(commonWords('joe likes milk bob also likes milk'))
+
+// reverse word
+
+function reverseWord(string){
+    return string.split('').reverse().join('')
+}
+
+console.log(reverseWord('Barbara'))
