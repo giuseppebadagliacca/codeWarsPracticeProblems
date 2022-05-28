@@ -124,4 +124,29 @@ var summation = function (num) {
     return finNum
   }
 
-  console.log(summation(300))
+//   console.log(summation(300))
+
+// We need a function that can transform a number into a string.
+
+function numberToString(num) {
+    return num.toString()
+  }
+
+//   In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". You function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+  function DNAStrand(dna){
+    const finArr = []
+    dna.split('').forEach(x=>{
+      if(x.toUpperCase() === 'A'){
+        finArr.push('T')
+      }else if(x.toUpperCase() === 'T'){
+        finArr.push('A')
+      }else if (x.toUpperCase() === 'C'){
+        finArr.push('G')
+      }else if(x.toUpperCase() === 'G'){
+        finArr.push('C')
+      }
+    })
+    return finArr.join('')
+  }
+
+  //console.log(DNAStrand('ATTGC'))
