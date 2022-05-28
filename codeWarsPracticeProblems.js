@@ -150,3 +150,27 @@ function numberToString(num) {
   }
 
   //console.log(DNAStrand('ATTGC'))
+
+
+// In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which, for the sake of simplicity, are named with letters from a to m.
+
+// The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+
+// Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+
+// You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+
+  function printerError(s) {
+    const errors = s.split('').filter(x=> 'nopqrstuvwxyz'.split('').includes(x))
+    return `${errors.length}/${s.length}`
+}
+// alt answer with regEx. Very clever
+// const printerError = s => `${(s.match(/[n-z]/g) || []).length}/${s.length}`;
+
+let s="aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"
+
+// console.log(printerError(s))
+
+//We need a function that can transform a string into a number. What ways of achieving this do you know?
+
+const stringToNumber = str => Number(str)
