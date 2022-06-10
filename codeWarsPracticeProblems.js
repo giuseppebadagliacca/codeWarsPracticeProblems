@@ -197,4 +197,9 @@ function SeriesSum(n){
   }
 }
 
-console.log(SeriesSum(2))
+// console.log(SeriesSum(2))
+
+
+const reverseWords = str => str.split('').reverse().join('');
+
+console.log(reverseWord('joey badagLIAcca'));
