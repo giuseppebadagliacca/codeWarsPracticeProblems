@@ -256,3 +256,32 @@ function anagrams(string1,string2){
 }
 
 // console.log(anagrams('at', 'ta'));
+
+
+function isIsogram(str){
+  const myObj ={};
+  for(let val of str){
+    myObj[val.toLowerCase()] = (myObj[val.toLowerCase()] || 0) + 1;
+  }
+  for(let keys in myObj){
+    if(myObj[keys] >1){
+      return false;
+    }
+  }
+  console.log(myObj)
+  return true;
+}
+
+console.log(isIsogram('FAT')); 
+// 0(2n) --> because there are two loops  
+
+function isIsogram(str){
+  return new Set(str.toUpperCase()).size == str.length;
+}
+
+// love this solution --> unsure of its big o
+
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+const simpleMultiplication = number => number%2===0 ? number*8:number*9;
