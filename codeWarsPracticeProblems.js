@@ -223,3 +223,36 @@ function getMiddle(s){
 }
 
 console.log(getMiddle('love'))
+
+// big o intro ...
+
+// want to avoid nested loops. aim for o(3n). --> Linear
+// use 2 non nested loops to construct objects made up of char and freq of EACH char in string. 
+// a 3rd non nested loop to comapare objects.
+
+function anagrams(string1,string2){
+  if(string1.length !== string2.length){
+    return false;
+  }else{
+    strObj1= {};
+    strObj2= {};
+  
+    for(let val of string1){
+      strObj1[val] = (strObj1[val] || 0) + 1;
+    }
+    for(let val of string2){
+      strObj2[val] = (strObj2[val] || 0) + 1;
+    }
+    for(let keys in strObj1){
+      if(!strObj2[keys]){
+        return false;
+      }
+      if(strObj2[keys] !== strObj1[keys]){
+        return false;
+      }
+      return true;
+    }
+  }
+}
+
+// console.log(anagrams('at', 'ta'));
