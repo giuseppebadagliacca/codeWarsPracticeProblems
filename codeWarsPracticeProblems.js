@@ -222,4 +222,29 @@ function getMiddle(s){
   return s.join('')
 }
 
-console.log(getMiddle('love'))
+// console.log(getMiddle('love'))
+
+// implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be nagative numbers in the array, but it will always be sorted. 
+
+// [1,1,1,1,1,2]
+function countUniqueValues(arr){
+  if(arr.length===0) return 0;
+  let i=0;
+  for(let j=1;j<arr.length;j++){
+    if(arr[i] !== arr[j]){
+      i++;
+      arr[i]= arr[j]
+    }
+  }
+  return i+1;
+}
+
+console.log(countUniqueValues([1,2,3,4,4,4,4,4,4,4,4,4,5,6,7,7,7,7,7,7])); // return 7 o(n) --> linear 
+
+// write a function maxSubarraySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elemnts in the array. 
+
+
+
+
+
+
