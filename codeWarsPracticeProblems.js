@@ -222,6 +222,81 @@ function getMiddle(s){
   return s.join('')
 }
 
+console.log(getMiddle('love'))
+
+// big o intro ...
+
+// want to avoid nested loops. aim for o(3n). --> Linear
+// use 2 non nested loops to construct objects made up of char and freq of EACH char in string. 
+// a 3rd non nested loop to comapare objects.
+
+function anagrams(string1,string2){
+  if(string1.length !== string2.length){
+    return false;
+  }else{
+    strObj1= {};
+    strObj2= {};
+  
+    for(let val of string1){
+      strObj1[val] = (strObj1[val] || 0) + 1;
+    }
+    for(let val of string2){
+      strObj2[val] = (strObj2[val] || 0) + 1;
+    }
+    for(let keys in strObj1){
+      if(!strObj2[keys]){
+        return false;
+      }
+      if(strObj2[keys] !== strObj1[keys]){
+        return false;
+      }
+      return true;
+    }
+  }
+}
+
+// console.log(anagrams('at', 'ta'));
+
+
+function isIsogram(str){
+  const myObj ={};
+  for(let val of str){
+    myObj[val.toLowerCase()] = (myObj[val.toLowerCase()] || 0) + 1;
+  }
+  for(let keys in myObj){
+    if(myObj[keys] >1){
+      return false;
+    }
+  }
+  console.log(myObj)
+  return true;
+}
+
+console.log(isIsogram('FAT')); 
+// 0(2n) --> because there are two loops  
+
+function isIsogram(str){
+  return new Set(str.toUpperCase()).size == str.length;
+}
+
+// love this solution --> unsure of its big o
+
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+const simpleMultiplication = number => number%2===0 ? number*8:number*9;
+
+
+// Build a function that returns an array of integers from n to 1 where n>0.
+
+const reverseSeq = n => {
+  const numArr = [];
+  while(n>0){
+    numArr.push(n);
+    n--;
+  }
+  return numArr;
+};
 // console.log(getMiddle('love'))
 
 // implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be nagative numbers in the array, but it will always be sorted. 
@@ -242,9 +317,3 @@ function countUniqueValues(arr){
 console.log(countUniqueValues([1,2,3,4,4,4,4,4,4,4,4,4,5,6,7,7,7,7,7,7])); // return 7 o(n) --> linear 
 
 // write a function maxSubarraySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elemnts in the array. 
-
-
-
-
-
-
