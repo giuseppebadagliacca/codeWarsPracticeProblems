@@ -1,16 +1,11 @@
 public class Magic {
 	public static void main(String[] args) {
-int myNumber = 8900;
+    System.out.println(findShort("I love Java Programming"));
+  }
 
-		// We will refer to myNumber as the original number from now on
+  public static String[] findShort(String s){
+    String[] sSplit = s.split("");
+    return sSplit;
 
-    int stepOne =  myNumber* myNumber;
-    int stepTwo =  stepOne + myNumber;
-    int stepThree =  stepTwo / myNumber;
-    int stepFour =  stepThree + 17;
-    int stepFive =  stepFour - myNumber;
-    int stepSix =  stepFive / 6;
-    System.out.println(stepSix);
-
-	}
+  }
 }
