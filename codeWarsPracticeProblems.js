@@ -222,7 +222,7 @@ function getMiddle(s){
   return s.join('')
 }
 
-console.log(getMiddle('love'))
+// console.log(getMiddle('love'))
 
 // big o intro ...
 
@@ -272,7 +272,7 @@ function isIsogram(str){
   return true;
 }
 
-console.log(isIsogram('FAT')); 
+// console.log(isIsogram('FAT')); 
 // 0(2n) --> because there are two loops  
 
 function isIsogram(str){
@@ -314,6 +314,21 @@ function countUniqueValues(arr){
   return i+1;
 }
 
-console.log(countUniqueValues([1,2,3,4,4,4,4,4,4,4,4,4,5,6,7,7,7,7,7,7])); // return 7 o(n) --> linear 
+// console.log(countUniqueValues([1,2,3,4,4,4,4,4,4,4,4,4,5,6,7,7,7,7,7,7])); // return 7 o(n) --> linear 
 
 // write a function maxSubarraySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elemnts in the array. 
+
+
+//Write a function named first_non_repeating_letter that takes a string input, and returns the first character that is not repeated anywhere in the string.
+
+function firstNonRepeatingLetter(s) {
+
+  for(let i=0;i<s.length;i++){
+    if(s.indexOf(s[i].toLowerCase())===s.lastIndexOf(s[i].toLowerCase())){
+      return s[i];
+    }
+  }
+  return null
+}
+
+console.log(firstNonRepeatingLetter('pop'))
