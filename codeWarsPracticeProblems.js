@@ -331,7 +331,7 @@ function firstNonRepeatingLetter(s) {
   return null
 }
 
-console.log(firstNonRepeatingLetter('pop'))
+// console.log(firstNonRepeatingLetter('pop'))
 
 //You are given an array(list) strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
 
@@ -355,3 +355,20 @@ function longestConsec(strarr, k) {
 }
 
 // console.log(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 4));
+
+// print a arrays within arrays to one final array. 
+
+function oneDimensionalArray(arr) {
+  const finArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      finArr.push(...oneDimensionalArray(arr[i]));
+    } else {
+      finArr.push(arr[i]);
+    }
+  }
+  return finArr;
+}
+const crazyArr = [1, 2, [3, 4, [5, [6, 6.5, 6.75, 6.99], 7], 8], 9, 10];
+console.log(oneDimensionalArray(crazyArr)); //big o(n) linear?? not sure
+
