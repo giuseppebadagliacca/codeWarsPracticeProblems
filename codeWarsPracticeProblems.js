@@ -370,5 +370,20 @@ function oneDimensionalArray(arr) {
   return finArr;
 }
 const crazyArr = [1, 2, [3, 4, [5, [6, 6.5, 6.75, 6.99], 7], 8], 9, 10];
-console.log(oneDimensionalArray(crazyArr)); //big o(n) linear?? not sure
+//console.log(oneDimensionalArray(crazyArr)); //big o(n) linear?? not sure
 
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+  return number%2 ===0 ? "Even": "Odd";
+}
+
+function removeExclamationMarks(s) {
+  let fin = '';
+  
+  s.split('').forEach(x=> x==='!'? null:fin += x)
+;
+  return fin;
+}
+
+console.log(removeExclamationMarks('H!e!l!l!o World!'))
