@@ -386,7 +386,7 @@ function removeExclamationMarks(s) {
   return fin;
 }
 
-console.log(removeExclamationMarks('H!e!l!l!o World!'))
+//console.log(removeExclamationMarks('H!e!l!l!o World!'))
 
 //Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
 
@@ -413,4 +413,23 @@ var removeElement = function(nums, val) {
   return nums
 };
 
-console.log(removeElement([1,2,2,2,2,3,44,5],2));
+//console.log(removeElement([1,2,2,2,2,3,44,5],2));
+
+
+//Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+var containsDuplicate = function(nums) {
+  const numsObject = {};
+  for(let i=0;i<nums.length;i++){
+      numsObject[nums[i]] ? numsObject[nums[i]] +=1 : numsObject[nums[i]] = 1;
+  }
+  for(let key in numsObject){
+    if(numsObject[key]> 1){
+      return true;
+    }
+  }
+  return false;
+};
+
+// console.log(containsDuplicate([1,2,3,3])); // -->0(2n) linear solution
+
