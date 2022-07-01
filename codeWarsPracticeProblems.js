@@ -400,3 +400,17 @@ return Number(`-${x.reverse().join('')}`)
 return Number(x.reverse().join(''))
 }
 };
+
+//Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
+
+var removeElement = function(nums, val) {
+  for(let i=0;i<nums.length;i++){
+      if(nums[i]===val){
+          const index = nums[i];
+          nums.splice(index, 1)
+      }
+  }
+  return nums
+};
+
+console.log(removeElement([1,2,2,2,2,3,44,5],2));
