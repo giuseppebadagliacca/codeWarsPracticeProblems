@@ -370,7 +370,72 @@ function oneDimensionalArray(arr) {
   return finArr;
 }
 const crazyArr = [1, 2, [3, 4, [5, [6, 6.5, 6.75, 6.99], 7], 8], 9, 10];
+
 // console.log(oneDimensionalArray(crazyArr)); //big o(n) linear?? not sure
+
+//console.log(oneDimensionalArray(crazyArr)); //big o(n) linear?? not sure
+
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+  return number % 2 === 0 ? "Even" : "Odd";
+}
+
+function removeExclamationMarks(s) {
+  let fin = '';
+
+  s.split('').forEach(x => x === '!' ? null : fin += x)
+    ;
+  return fin;
+}
+
+//console.log(removeExclamationMarks('H!e!l!l!o World!'))
+
+//Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+
+let reverse = function (x) {
+  x = x.toString().split('')
+
+  if (x[0] === '-') {
+    x.shift()
+    return Number(`-${x.reverse().join('')}`)
+  } else {
+    return Number(x.reverse().join(''))
+  }
+};
+
+//Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
+
+var removeElement = function (nums, val) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      const index = nums[i];
+      nums.splice(index, 1)
+    }
+  }
+  return nums
+};
+
+//console.log(removeElement([1,2,2,2,2,3,44,5],2));
+
+
+//Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+var containsDuplicate = function (nums) {
+  const numsObject = {};
+  for (let i = 0; i < nums.length; i++) {
+    numsObject[nums[i]] ? numsObject[nums[i]] += 1 : numsObject[nums[i]] = 1;
+  }
+  for (let key in numsObject) {
+    if (numsObject[key] > 1) {
+      return true;
+    }
+  }
+  return false;
+};
+
+// console.log(containsDuplicate([1,2,3,3])); // -->0(2n) linear solution
+
 
 // Our football team finished the championship. The result of each match look
 // like "x:y". Results of all matches are recorded in the collection.
