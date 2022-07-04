@@ -464,3 +464,23 @@ function points(games) {
 }
 
 console.log(points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]));
+
+
+
+//Create a function which answers the question "Are you playing banjo?". If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+function areYouPlayingBanjo(name) {
+  return name[0] === "r" || name[0] === "R" ? `${name} plays banjo` : `${name} does not play banjo`
+}
+
+//In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+
+//OR
+
+function makeNegative(num) {
+  return num < 0 ? num : -num;
+}
