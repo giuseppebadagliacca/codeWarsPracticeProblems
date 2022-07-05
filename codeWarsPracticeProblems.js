@@ -484,3 +484,16 @@ function makeNegative(num) {
 function makeNegative(num) {
   return num < 0 ? num : -num;
 }
+
+//There is a bus moving in the city, and it takes and drop some people in each bus stop. You are provided with a list (or array) of integer pairs. Elements of each pair represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+
+var number = function (busStops) {
+  let sum = 0;
+  busStops.forEach(x => {
+    sum += x[0];
+    sum -= x[1];
+  })
+  return sum;
+}
+
+//console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]])) //should give us 17. 
