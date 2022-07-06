@@ -463,7 +463,7 @@ function points(games) {
   return sum;
 }
 
-console.log(points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]));
+//console.log(points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]));
 
 
 
@@ -497,3 +497,51 @@ var number = function (busStops) {
 }
 
 //console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]])) //should give us 17. 
+
+//In this simple Kata your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up. 
+
+function wave(str) {
+  const final = [];
+  str = str.split('');
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      null;
+    } else {
+      str[i] = str[i].toUpperCase();
+      final.push(str.join(''));
+      str[i] = str[i].toLowerCase();
+    }
+  }
+  return final;
+}
+
+console.log(wave("two words"));
+// ['Two words', 'tWo words', 'twO words', 'two words', 'two Words', 'two wOrds', 'two woRds', 'two worDs', 'two wordS']
+
+
+//The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+
+function duplicateEncode(word) {
+  const countObject = {};
+  let finalString = "";
+  for (let i = 0; i < word.length; i++) {
+    countObject[word[i].toLowerCase()] ? countObject[word[i].toLowerCase()] += 1 : countObject[word[i].toLowerCase()] = 1;
+  }
+
+  for (let key in countObject) {
+    if (countObject[key] >= 2) {
+      countObject[key] = ")"
+    } else {
+      countObject[key] = "("
+    }
+  }
+
+  for (let i = 0; i < word.length; i++) {
+    finalString += countObject[word[i].toLowerCase()];
+  }
+  return finalString;
+}
+
+console.log(duplicateEncode("Success")) //")())())";
+
