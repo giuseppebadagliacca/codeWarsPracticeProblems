@@ -515,7 +515,7 @@ function wave(str) {
   return final;
 }
 
-console.log(wave("two words"));
+//console.log(wave("two words"));
 // ['Two words', 'tWo words', 'twO words', 'two words', 'two Words', 'two wOrds', 'two woRds', 'two worDs', 'two wordS']
 
 
@@ -546,9 +546,11 @@ function duplicateEncode(word) {
 //console.log(duplicateEncode("Success")) //")())())";
 
 //The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}. What if the string is empty? Then the result should be empty object literal, {}.
+
+
 function count(string) {
   if (string.length === 0) {
-    return string;
+    return {};
   }
   const finObj = {};
   for (let i = 0; i < string.length; i++) {
@@ -557,4 +559,22 @@ function count(string) {
   return finObj;
 }
 
-console.log(count('Joejj'));
+//console.log(count('Joejj'));
+
+//Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd".  Your task is to process a string with "#" symbols.
+
+function cleanString(s) {
+  if (s === "") {
+    return s;
+  }
+  let finalString = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "#") {
+      finalString.pop();
+    } else {
+      finalString.push(s[i]);
+    }
+  }
+  return finalString.join('');
+}
