@@ -578,3 +578,18 @@ function cleanString(s) {
   }
   return finalString.join('');
 }
+
+//Given an array of integers, find the one that appears an odd number of times.  There will always be only one integer that appears an odd number of times.
+
+
+function findOdd(A) {
+  const amountOfTime = {};
+
+  A.forEach(x => amountOfTime[x] ? amountOfTime[x] += 1 : amountOfTime[x] = 1);
+
+  for (let key in amountOfTime) {
+    if (amountOfTime[key] % 2 !== 0) return Number(key);
+  }
+}
+
+// big O(2n) ==> O(n) linear
