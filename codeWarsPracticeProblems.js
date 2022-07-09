@@ -579,6 +579,7 @@ function cleanString(s) {
   return finalString.join('');
 }
 
+<<<<<<< HEAD
 function alternatingCases(sentence){
   let finalSentence = "";
   
@@ -609,3 +610,19 @@ function alternatingCases(sentence){
   }
 
   console.log(findEvenIndex([20,10,-80,10,10,15,35]));
+=======
+//Given an array of integers, find the one that appears an odd number of times.  There will always be only one integer that appears an odd number of times.
+
+
+function findOdd(A) {
+  const amountOfTime = {};
+
+  A.forEach(x => amountOfTime[x] ? amountOfTime[x] += 1 : amountOfTime[x] = 1);
+
+  for (let key in amountOfTime) {
+    if (amountOfTime[key] % 2 !== 0) return Number(key);
+  }
+}
+
+// big O(2n) ==> O(n) linear
+>>>>>>> b7498d99d7cce92ac88a38ed148f8e168f2d5f9d
