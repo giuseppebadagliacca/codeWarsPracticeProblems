@@ -578,3 +578,34 @@ function cleanString(s) {
   }
   return finalString.join('');
 }
+
+function alternatingCases(sentence){
+  let finalSentence = "";
+  
+  for(let i=0;i<sentence.length;i++){
+    i%2===0 ?finalSentence += sentence[i].toUpperCase():finalSentence += sentence[i].toLowerCase();
+  }
+  return finalSentence;
+}
+
+  //console.log(alternatingCases("We are the world"))
+
+
+  function findEvenIndex(arr){
+    let sumAfter = arr.reduce((x,y)=> x+=y,0) - arr[0];
+    let sumBefore = arr[0];
+
+      for(let i=1;i<arr.length;i++){
+        if(sumAfter - arr[i] ===0 && sumBefore ===0) return 0;
+        if(sumBefore === sumAfter - arr[i]){
+
+          return i;
+        }
+        sumBefore+=arr[i];
+        sumAfter-=arr[i];
+      }
+      
+      return -1;
+  }
+
+  console.log(findEvenIndex([20,10,-80,10,10,15,35]));
