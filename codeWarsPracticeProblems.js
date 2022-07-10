@@ -609,7 +609,7 @@ function alternatingCases(sentence){
       return -1;
   }
 
-  console.log(findEvenIndex([20,10,-80,10,10,15,35]));
+  //console.log(findEvenIndex([20,10,-80,10,10,15,35]));
 
 //Given an array of integers, find the one that appears an odd number of times.  There will always be only one integer that appears an odd number of times.
 
@@ -625,4 +625,22 @@ function findOdd(A) {
 }
 
 // big O(2n) ==> O(n) linear
+
+function getGrade (s1, s2, s3) {
+  const average = (s1+s2+s3)/3;
+  if(average >= 90 && average <= 100){
+    return "A";
+  }else if(average >= 80 && average < 90){
+    return "B";
+  }else if(average >= 70 && average < 80){
+    return "C";
+  }else if(average >= 60 && average < 70){
+    return "D";
+  }else if(average >= 0 && average < 60){
+    return "F";
+  }
+}
+
+// console.log(getGrade(95,90,93));
+s
 
