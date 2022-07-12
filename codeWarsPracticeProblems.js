@@ -580,36 +580,36 @@ function cleanString(s) {
 }
 
 
-function alternatingCases(sentence){
+function alternatingCases(sentence) {
   let finalSentence = "";
-  
-  for(let i=0;i<sentence.length;i++){
-    i%2===0 ?finalSentence += sentence[i].toUpperCase():finalSentence += sentence[i].toLowerCase();
+
+  for (let i = 0; i < sentence.length; i++) {
+    i % 2 === 0 ? finalSentence += sentence[i].toUpperCase() : finalSentence += sentence[i].toLowerCase();
   }
   return finalSentence;
 }
 
-  //console.log(alternatingCases("We are the world"))
+//console.log(alternatingCases("We are the world"))
 
 
-  function findEvenIndex(arr){
-    let sumAfter = arr.reduce((x,y)=> x+=y,0) - arr[0];
-    let sumBefore = arr[0];
+function findEvenIndex(arr) {
+  let sumAfter = arr.reduce((x, y) => x += y, 0) - arr[0];
+  let sumBefore = arr[0];
 
-      for(let i=1;i<arr.length;i++){
-        if(sumAfter - arr[i] ===0 && sumBefore ===0) return 0;
-        if(sumBefore === sumAfter - arr[i]){
+  for (let i = 1; i < arr.length; i++) {
+    if (sumAfter - arr[i] === 0 && sumBefore === 0) return 0;
+    if (sumBefore === sumAfter - arr[i]) {
 
-          return i;
-        }
-        sumBefore+=arr[i];
-        sumAfter-=arr[i];
-      }
-      
-      return -1;
+      return i;
+    }
+    sumBefore += arr[i];
+    sumAfter -= arr[i];
   }
 
-  //console.log(findEvenIndex([20,10,-80,10,10,15,35]));
+  return -1;
+}
+
+//console.log(findEvenIndex([20,10,-80,10,10,15,35]));
 
 //Given an array of integers, find the one that appears an odd number of times.  There will always be only one integer that appears an odd number of times.
 
@@ -626,21 +626,77 @@ function findOdd(A) {
 
 // big O(2n) ==> O(n) linear
 
-function getGrade (s1, s2, s3) {
-  const average = (s1+s2+s3)/3;
-  if(average >= 90 && average <= 100){
+function getGrade(s1, s2, s3) {
+  const average = (s1 + s2 + s3) / 3;
+  if (average >= 90 && average <= 100) {
     return "A";
-  }else if(average >= 80 && average < 90){
+  } else if (average >= 80 && average < 90) {
     return "B";
-  }else if(average >= 70 && average < 80){
+  } else if (average >= 70 && average < 80) {
     return "C";
-  }else if(average >= 60 && average < 70){
+  } else if (average >= 60 && average < 70) {
     return "D";
-  }else if(average >= 0 && average < 60){
+  } else if (average >= 0 && average < 60) {
     return "F";
   }
 }
 
 // console.log(getGrade(95,90,93));
-s
+
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number. Complete the method which accepts such an array, and returns that single different number.
+
+function stray(numbers) {
+  const object = {};
+  numbers.forEach(x => object[x] ? object[x] += 1 : object[x] = 1
+  );
+  for (let key in object) {
+    if (object[key] === 1) return Number(key);
+  }
+}
+
+//console.log(stray([1, 1, 1, 1, 1, 2]));
+
+
+
+function repeatStringNumTimes(str, num) {
+  //if num is not pos --> return "";
+  if (num <= 0) return "";
+
+  // create a var that will hold and empty 
+  let finalStr = "";
+
+  // while. condition while num === true value 0
+  // append str num times 
+  while (num) {
+    finalStr += str;
+    num--;
+  }
+  return finalStr;
+}
+
+//console.log(repeatStringNumTimes("Giuseppe", 3));
+
+
+
+
+
+function titleCase(str) {
+  let splitStrArr = str.toLowerCase();
+  splitStrArr = splitStrArr.split(' ');
+
+  for (let i = 0; i < splitStrArr.length; i++) {
+    splitStrArr[i] = splitStrArr[i].charAt(0).toUpperCase() + splitStrArr[i].substring(1);
+  }
+
+  return splitStrArr.join(' ');
+}
+
+//console.log(titleCase("GiuSpPE IS cool!"));
+
+
+
+
+
+
 
