@@ -718,4 +718,104 @@ function order(words) {
   return final.join(' ');
 }
 
-console.log(order("is2 Thi1s 3a T4est")); //"Thi1s is2 3a T4est"
+//console.log(order("is2 Thi1s 3a T4est")); //"Thi1s is2 3a T4est"
+
+
+function zero(equation) {
+  if (equation) {
+    return helper(0, equation);
+  } else {
+    return 0;
+  }
+
+}
+function one(equation) {
+  if (equation) {
+    return helper(1, equation);
+  } else {
+    return 1;
+  }
+}
+function two(equation) {
+  if (equation) {
+    return helper(2, equation);
+  } else {
+    return 2;
+  }
+}
+function three(equation) {
+  if (equation) {
+    return helper(3, equation);
+  } else {
+    return 3;
+  }
+}
+function four(equation) {
+  if (equation) {
+    return helper(4, equation);
+  } else {
+    return 4;
+  }
+}
+function five(equation) {
+  if (equation) {
+    return helper(5, equation);
+  } else {
+    return 5;
+  }
+}
+function six(equation) {
+  if (equation) {
+    return helper(6, equation);
+  } else {
+    return 6;
+  }
+}
+function seven(equation) {
+  if (equation) {
+    return helper(7, equation);
+  } else {
+    return 7;
+  }
+}
+function eight(equation) {
+  if (equation) {
+    return helper(8, equation);
+  } else {
+    return 8;
+  }
+}
+function nine(equation) {
+  if (equation) {
+    return helper(9, equation);
+  } else {
+    return 9;
+  }
+}
+
+function plus(num) {
+  return ["plus", num];
+}
+function minus(num) {
+  return ["minus", num];
+}
+function times(num) {
+  return ["times", num];
+}
+function dividedBy(num) {
+  return ["divide", num];
+}
+
+function helper(firstNum, opperationAndSecondNum) {
+  if (opperationAndSecondNum[0] === "plus") {
+    return firstNum + opperationAndSecondNum[1];
+  } else if (opperationAndSecondNum[0] === "minus") {
+    return firstNum - opperationAndSecondNum[1];
+  } else if (opperationAndSecondNum[0] === "times") {
+    return firstNum * opperationAndSecondNum[1];
+  } else if (opperationAndSecondNum[0] === "divide") {
+    return Number((firstNum / opperationAndSecondNum[1]));
+  }
+}
+
+console.log(seven(dividedBy(five())));
