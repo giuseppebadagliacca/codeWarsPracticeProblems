@@ -818,4 +818,13 @@ function helper(firstNum, opperationAndSecondNum) {
   }
 }
 
-console.log(seven(dividedBy(five())));
+//console.log(seven(dividedBy(five())));
+
+
+
+function solution(str, ending) {
+  if (ending === "") return true;
+  return str.split('').slice(-ending.length).join('') === ending;
+}
+
+console.log(solution('abcde', 'cde')); // true
