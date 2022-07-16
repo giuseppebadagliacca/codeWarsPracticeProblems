@@ -827,4 +827,10 @@ function solution(str, ending) {
   return str.split('').slice(-ending.length).join('') === ending;
 }
 
+//OR
+
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+
 console.log(solution('abcde', 'cde')); // true
