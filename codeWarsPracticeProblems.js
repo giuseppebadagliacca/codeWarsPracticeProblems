@@ -845,4 +845,24 @@ var removeElement = function (nums, val) {
   return finArr;
 };
 
-console.log(removeElement([3, 2, 2, 3, 2], 3));
+//console.log(removeElement([3, 2, 2, 3, 2], 3));
+
+//Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+
+
+function getSum(a, b) {
+  if (a === b) return a;
+
+  let small = b;
+  let big = a;
+  let sum = 0;
+  if (a < b) {
+    small = a;
+    big = b;
+  }
+
+  for (let i = small; i <= big; i++) {
+    sum += i;
+  }
+  return sum;
+}
