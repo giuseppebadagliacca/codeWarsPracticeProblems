@@ -833,4 +833,16 @@ function solution(str, ending) {
   return str.endsWith(ending);
 }
 
-console.log(solution('abcde', 'cde')); // true
+//console.log(solution('abcde', 'cde')); // true
+
+var removeElement = function (nums, val) {
+  const finArr = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      finArr.push(nums[i]);
+    }
+  }
+  return finArr;
+};
+
+console.log(removeElement([3, 2, 2, 3, 2], 3));
