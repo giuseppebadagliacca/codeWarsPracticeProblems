@@ -866,3 +866,7 @@ function getSum(a, b) {
   }
   return sum;
 }
+
+function findNeedle(haystack) {
+  return "found the needle at position " + haystack.indexOf("needle");
+}
