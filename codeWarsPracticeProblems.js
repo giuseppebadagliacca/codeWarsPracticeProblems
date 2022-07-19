@@ -870,3 +870,15 @@ function getSum(a, b) {
 function findNeedle(haystack) {
   return "found the needle at position " + haystack.indexOf("needle");
 }
+
+function reverseNum(x) {
+  if (x < 0 && x > -2147483647) {
+    return -Number(String(Math.abs(x)).split('').reverse().join(''));
+  } else if (x > 0 && x < 2147483647) {
+    return Number(String(x).split('').reverse().join(''));
+  } else {
+    return 0;
+  }
+}
+
+//console.log(reverseNum(-123))
