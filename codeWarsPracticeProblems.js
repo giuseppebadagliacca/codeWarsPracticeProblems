@@ -882,3 +882,18 @@ function reverseNum(x) {
 }
 
 //console.log(reverseNum(-123))
+
+
+// let nums1 = [1, 2]
+// let nums2 = [3, 4]
+
+// var findMedianSortedArrays = function (nums1, nums2) {
+//   const combinedArr = nums1.concat(nums2);
+//   if (combinedArr.length % 2 === 0) {
+
+//   } else {
+//     return combinedArr[(combinedArr.length - 1) / 2]
+//   }
+// };
+
+// console.log(findMedianSortedArrays(nums1, nums2))
