@@ -897,3 +897,9 @@ function reverseNum(x) {
 // };
 
 // console.log(findMedianSortedArrays(nums1, nums2))
+
+//Complete the square sum function so that it squares each number passed into it and then sums the results together.
+function squareSum(numbers) {
+  const squared = numbers.map(x => x * x);
+  return squared.reduce((x, y) => x + y, 0);
+}
