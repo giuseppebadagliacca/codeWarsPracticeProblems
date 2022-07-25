@@ -920,10 +920,21 @@ var twoSum = function (nums, target) {
 
 //   public static double sum(double[] numbers) {
 //     double sum = 0;
-    
+
 //     for(int i=0;i<numbers.length;i++){
 //       sum += numbers[i];
 //     }
 //     return sum;
 //   }
 // }
+
+//Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+function descendingOrder(x) {
+  x = String(x).split('');
+  const numberArr = [];
+  x.forEach(x => numberArr.push(Number(x)));
+  return Number(numberArr.sort((a, b) => b - a).join(''));
+}
+
+console.log(descendingOrder(123));
